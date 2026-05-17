@@ -1,0 +1,69 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    'DM Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-scribble: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive;
+
+  --color-surface: #0c0d10;
+  --color-surface-elevated: #13151b;
+  --color-border: rgb(255 255 255 / 0.08);
+  --color-accent: #e8b86d;
+  --color-accent-muted: rgb(232 184 109 / 0.35);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  background-color: var(--color-surface);
+  background-image:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgb(232 184 109 / 0.12), transparent),
+    radial-gradient(ellipse 70% 50% at 100% 50%, rgb(99 102 241 / 0.06), transparent);
+  color: rgb(248 250 252 / 0.92);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.concept-desk {
+  background:
+    radial-gradient(120% 90% at 50% 100%, rgb(120 83 54 / 0.22), transparent 55%),
+    radial-gradient(80% 60% at 20% 0%, rgb(41 37 36 / 0.35), transparent 50%),
+    linear-gradient(180deg, rgb(28 25 23) 0%, rgb(23 20 18) 100%);
+}
+
+.concept-sheet {
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.35) inset,
+    0 12px 40px -12px rgb(0 0 0 / 0.45);
+}
+
+.concept-scribble-field {
+  background-image:
+    linear-gradient(to right, rgb(185 28 28 / 0.14) 0 3px, transparent 3px),
+    repeating-linear-gradient(
+      transparent 0,
+      transparent calc(1.45rem - 1px),
+      rgb(44 40 37 / 0.09) calc(1.45rem - 1px),
+      rgb(44 40 37 / 0.09) 1.45rem
+    );
+  background-size:
+    100% 100%,
+    100% 1.45rem;
+  background-attachment: local;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-sheet {
+    transform: none !important;
+  }
+}
